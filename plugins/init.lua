@@ -31,7 +31,6 @@ return {
             astronvim.add_user_cmp_source "emoji"
         end,
     },
-
     {
         "zbirenbaum/copilot.lua",
         config = function()
@@ -41,7 +40,6 @@ return {
             astronvim.add_user_cmp_source "copilot"
         end,
     },
-
     {
         "zbirenbaum/copilot-cmp",
         after = { "copilot.lua" },
@@ -50,5 +48,7 @@ return {
                 method = "getCompletionsCycling",
             })
         end
-    }
+    },
+
+    { "ahmedkhalf/project.nvim", }
 }

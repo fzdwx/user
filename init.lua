@@ -4,6 +4,7 @@
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
+
 local config = {
 
     -- Configure AstroNvim updates
@@ -304,5 +305,7 @@ local config = {
         -- }
     end,
 }
+
+require("user.plugins.telescope_ext")
 
 return config
