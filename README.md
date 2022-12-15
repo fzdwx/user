@@ -11,6 +11,13 @@ mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 ```
 
+or
+
+```shell
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+```
+
 clone repo:
 
 ```shell
