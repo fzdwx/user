@@ -26,16 +26,29 @@ local config = {
     },
 
     -- Set colorscheme to use
-    colorscheme = "aura",
+    colorscheme = "default_theme",
 
-    -- Add highlight groups in any theme
-    highlights = {
-        -- init = { -- this table overrides highlights in all themes
-        --   Normal = { bg = "#000000" },
-        -- }
-        -- duskfox = { -- a table of overrides/changes to the duskfox theme
-        --   Normal = { bg = "#000000" },
-        -- },
+    -- modify variables used by heirline but not defined in the setup call directly
+    heirline = {
+        -- define the separators between each section
+        separators = {
+            left = { "", " " }, -- separator for the left side of the statusline
+            right = { " ", "" }, -- separator for the right side of the statusline
+        },
+        -- add new colors that can be used by heirline
+        colors = function(hl)
+            -- use helper function to get highlight group properties
+            local comment_fg = astronvim.get_hlgroup("Comment").fg
+            hl.git_branch_fg = comment_fg
+            hl.git_added = comment_fg
+            hl.git_changed = comment_fg
+            hl.git_removed = comment_fg
+            hl.blank_bg = astronvim.get_hlgroup("Folded").fg
+            hl.file_info_bg = astronvim.get_hlgroup("Visual").bg
+            hl.nav_icon_bg = astronvim.get_hlgroup("String").fg
+            hl.folder_icon_bg = astronvim.get_hlgroup("Error").fg
+            return hl
+        end,
     },
 
     -- set vim options here (vim.<first_key>.<second_key> = value)
@@ -202,8 +215,6 @@ local config = {
 
     -- Configure plugins
     plugins = {
-        init = require "user.plugin".init,
-
         -- All other entries override the require("<key>").setup({...}) call for default plugins
         ["null-ls"] = function(config)
             -- overrides `require("null-ls").setup(config)`
@@ -235,7 +246,7 @@ local config = {
             -- ensure_installed = { "python" },
         },
 
-        ["alpha"] = require "user.plugin_alpha".config
+        --["alpha"] = require "user.plugin_alpha".config
     },
 
     -- LuaSnip Options
@@ -257,14 +268,7 @@ local config = {
     -- The value can also be set to a boolean for disabling default sources:
     -- false == disabled
     -- true == 1000
-    cmp = {
-        source_priority = {
-            nvim_lsp = 1000,
-            luasnip = 750,
-            buffer = 500,
-            path = 250,
-        },
-    },
+    cmp = require "user.adv.cmp",
 
     -- Modify which-key registration (Use this with mappings table in the above.)
     ["which-key"] = {

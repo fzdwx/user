@@ -73,17 +73,12 @@ local options = {
     headerPaddingBottom = { type = "padding", val = 2 },
 }
 
-local M = {}
-
-M.config = {
+return {
     layout = {
         options.headerPaddingTop,
         options.header,
-        { type = "padding", val = 3 },
         options.headerPaddingBottom,
         options.buttons,
     },
     opts = { noautocmd = true },
 }
-
-return M

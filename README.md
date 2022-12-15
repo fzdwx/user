@@ -25,3 +25,11 @@ git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 git clone https://github.com/fzdwx/user ~/.config/nvim/lua/user
 nvim +PackerSync
 ```
+
+
+## Add LSP and Syntax
+
+```shell
+LspInstall xxx # use tab to complete
+TSInstall xxx  # use tab to complete
+```
