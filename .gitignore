@@ -1,7 +1,7 @@
 ### Lua template
 # Compiled Lua sources
 luac.out
-
+.idea
 # luarocks build files
 *.src.rock
 *.zip
