@@ -62,7 +62,8 @@ local options = {
             button("t", " " .. " Find Word  ", ":Telescope live_grep<CR>"),
             button("m", " " .. " Bookmarks  ", ":Telescope marks<CR>"),
             --button("h", " " .. " Themes  ", ":Telescope themes<CR>"),
-            button("c", " " .. " Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
+            button("c", " " .. " Settings", ":e ~/.config/nvim/lua/user/init.lua | :cd %:p:h <CR>"),
+
             button("q", " " .. " Quit", ":qa<CR>"),
         },
         opts = {
