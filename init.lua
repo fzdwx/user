@@ -212,6 +212,22 @@ local config = {
             ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
             -- quick save
             -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+            -- goto-preview key mapping
+            ["<leader>nr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>",
+                desc = "Preview refrences" },
+            ["<leader>nd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+                desc = "Preview definition" },
+            ["<leader>nt"] = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
+                desc = "Preview type definition" },
+            ["<leader>ni"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
+                desc = "Preview implementation" },
+            ["<leader>nc"] = { "<cmd>lua require('goto-preview').close_all_win()<CR>",
+                desc = "Closw all preview windows" },
+
+            ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<CR>",
+                desc = "Open project list" }
+
         },
         t = {
             -- setting a mapping to false will disable it
