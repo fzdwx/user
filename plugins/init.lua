@@ -52,3 +52,4 @@ return {
 
     { "ahmedkhalf/project.nvim", }
 }
+

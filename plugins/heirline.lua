@@ -31,7 +31,7 @@ return function(config)
         -- add a section for the currently opened file information
         astronvim.status.component.file_info {
             -- enable the file_icon and disable the highlighting based on filetype
-            file_icon = { hl = false, padding = { left = 0 } },
+            file_icon = { padding = { left = 0 } },
             filename = { fallback = "Empty" },
             -- add padding
             padding = { right = 1 },
