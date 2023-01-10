@@ -1,6 +1,6 @@
 # Neovim Config
 
-This is my personal neovim config,[Based on AstroNvim](https://github.com/AstroNvim/AstroNvim).
+This is my personal neovim config,Based on [AstroNvim](https://github.com/AstroNvim/AstroNvim).
 
 ## Installation
 
@@ -26,10 +26,28 @@ git clone https://github.com/fzdwx/user ~/.config/nvim/lua/user
 nvim +PackerSync
 ```
 
+# :package: Basic Setup
 
-## Add LSP and Syntax
+## Update
 
 ```shell
-LspInstall xxx # use tab to complete
-TSInstall xxx  # use tab to complete
+:AstroUpdate
+```
+
+## Install LSP
+
+```shell
+:LspInstall xxx
+```
+
+## Install language parser
+
+```shell
+:TSInstall xxx
+```
+
+## Install Debugger
+
+```shell
+:DapInstall xxx
 ```
